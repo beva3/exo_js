@@ -49,7 +49,7 @@
         }
 
         /* Buttons */
-        .button {
+        #button {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
@@ -60,11 +60,11 @@
             background-color: #e74c3c;
             border: none;
             border-radius: 5px;
-            cursor: not-allowed; /* Disabled for now (no JS) */
+            cursor: progress; /* Disabled for now (no JS) */
         }
 
         /* Hover effect (in case JS is added later) */
-        .button:hover {
+        #button:hover {
             background-color: #c0392b;
         }
 
@@ -81,7 +81,7 @@
         <h1>Random Word Generator</h1>
 
         <div id="word-box">Word Appears Here</div>
-        <button class="button">Generate Word</button>
+        <button id="button">Generate Word</button>
 
         <p class="footer">Built with HTML & CSS</p>
     </div>
