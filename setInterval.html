@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setIntervall</title>
+</head>
+<body>
+    <h1 id="heade">he</h1>
+    <script>
+        h_1 = document.getElementById("heade")
+        
+        console.log(h_1)
+        let h = 0
+        setInterval(() =>{
+            h_1.textContent = h%100
+            h++;
+            
+        }, 5);
+        
+    </script>
+</body>
+</html>
