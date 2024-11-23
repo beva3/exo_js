@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
     <title>Generate Word</title>
     <style>
         /* Global styles */
@@ -36,7 +37,7 @@
         }
 
         /* Word Display */
-        .word-box {
+        #word-box {
             font-size: 32px;
             font-weight: bold;
             margin: 20px 0;
@@ -79,9 +80,9 @@
     <div class="container">
         <h1>Random Word Generator</h1>
 
-        <div class="word-box">Word Appears Here</div>
+        <div id="word-box">Word Appears Here</div>
         <button class="button">Generate Word</button>
-        
+
         <p class="footer">Built with HTML & CSS</p>
     </div>
 </body>
