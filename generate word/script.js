@@ -19,6 +19,10 @@ class G_m{
         return words[random_index];
     }
     change(){
+        word_box.style.transform = "rotate(360deg)"
+        setTimeout(() => {
+            word_box.style.transform = "rotate(0deg)";
+        }, 500);
         word_box.innerHTML = this.generate();
     }
 }
