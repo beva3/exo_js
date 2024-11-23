@@ -15,7 +15,7 @@ class Clock{
         this.clockElement.textContent = this.getCurentTime()
     }
     start(){
-        this.update()
+        // this.update()
         setInterval(() => this.update(), 1000)
     }
 }
