@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        input, select, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <input type="number" id="amount" placeholder="Enter amount" />
+    <select id="fromCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="MGA">MGA</option>
+    </select>
+    <select id="toCurrency">
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+        <option value="MGA">MGA</option>
+    </select>
+    <button id="convertBtn">Convert</button>
+    <div id="result"></div>
+
+    <!-- <script>
+        const exchangeRates = {
+            USD: { EUR: 0.85, MGA: 4400 },
+            EUR: { USD: 1.18, MGA: 5200 },
+            MGA: { USD: 0.00023, EUR: 0.00019 },
+        };
+
+        document.getElementById('convertBtn').addEventListener('click', () => {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const fromCurrency = document.getElementById('fromCurrency').value;
+            const toCurrency = document.getElementById('toCurrency').value;
+
+            if (!amount || fromCurrency === toCurrency) {
+                document.getElementById('result').textContent = "Invalid input or same currency!";
+                return;
+            }
+
+            const rate = exchangeRates[fromCurrency][toCurrency];
+            const convertedAmount = (amount * rate).toFixed(2);
+
+            document.getElementById('result').textContent = 
+                `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        });
+    </script> -->
+</body>
+</html>
