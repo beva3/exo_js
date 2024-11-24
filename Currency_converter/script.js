@@ -5,15 +5,18 @@ class CurrencyConvert{
     }
     convert(amount, from_currency, to_currency){
         const rate = this.exchangeRates[from_currency][to_currency];
-        return amount * rate;
+        return (amount * rate).toFixed(3);
     }
     display_result(amount, from_currency, to_currency, convertedAmount){
         const resultDiv = document.getElementById('result');
         resultDiv.textContent = `${amount} ${from_currency} = ${convertedAmount} ${to_currency}`;
+        resultDiv.style.color ='green';
     }
     display_error(msg){
         const resultDiv = document.getElementById('result');
         resultDiv.textContent = msg;
+        resultDiv.style.color ='red';
+        resultDiv.style.fontWeight = 'bold';
     }
     // validate input
     validateInput(amount, from_currency, to_currency){
