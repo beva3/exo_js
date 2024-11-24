@@ -11,7 +11,17 @@ class CurrencyConvert{
         const resultDiv = document.getElementById('result');
         resultDiv.textContent = `${amount} ${from_currency} = ${convertedAmount} ${to_currency}`;
     }
-    // method to convert USD to EUR
+    display_error(msg){
+        const resultDiv = document.getElementById('result');
+        resultDiv.textContent = msg;
+    }
+    // validate input
+    validateInput(amount, from_currency, to_currency){
+        if(!amount || from_currency === to_currency){
+            return false;
+        }
+        return true;
+    }
 }
 
 console.log(btn);
@@ -27,8 +37,13 @@ const exchangeRates = {
 btn.addEventListener('click',() =>{
     let amount = parseFloat(document.getElementById('amount').value);
     let from_currency = document.getElementById('fromCurrency').value;
-    let to_currency = document.getElementById('toCurrency').value;    
+    let to_currency = document.getElementById('toCurrency').value; 
+       
     let app = new CurrencyConvert(exchangeRates);
+    if(!app.validateInput(amount, from_currency, to_currency)){
+        app.display_error("Invalid input or same currency")
+        return;
+    }
     let result = app.convert(amount, from_currency, to_currency);
     app.display_result(amount, from_currency, to_currency, result);
     // alert('Please enter');
