@@ -5,22 +5,32 @@ class Crud{
            {id:2,name:'Jane',email : 'jane@example.com'},
            {id:3,name:'Bob',email : 'bob@example.com'}  //... add more clients here
         ]
-        this.table_body = document.getElementById('table-body');        
+        this.table_body = document.getElementById('table-body');       
     }
     add(){
         console.log('add client');
-        let input_name = document.getElementById('input-name');
-        let input_email = document.getElementById('input-email');     
+        let input_name = document.getElementById('name-input');
+        let input_email = document.getElementById('email-input');     
         let add_btn = document.getElementById('add-btn');
         
         
-        // add_btn.addEventListener('click',() =>{
-            
-        //     client.id = this.clients.length + 1;
-        //     this.clients.push(client);
-        //     this.print()
-            
-        // });
+        add_btn.addEventListener('click',() =>{
+
+            let client = {
+                name: input_name.value.trim(),
+                email: input_email.value.trim()
+            }
+            if(client.name === '' || client.email === ''){
+                alert("Please enter a name and email.");
+            }
+            else {
+                client.id = this.clients.length + 1;
+                this.clients.push(client);
+                this.print()
+                input_name.value = '';
+                input_email.value = '';
+            }
+        });
         // this.clients.push(client);
         // this.print()
     }
@@ -38,8 +48,8 @@ class Crud{
         `
     }
     print(){
-        console.log('fafao daholo ny eo ambony');
-        // this.table_body.innerHTML = ""
+        // console.log('fafao daholo ny eo ambony');
+        this.update()
         console.log('print clients');
         this.clients.forEach(cl =>{
             this.table_body.innerHTML += this.get_row(cl)
@@ -47,8 +57,14 @@ class Crud{
     }
     update(){
         console.log('update client');
+        this.table_body.innerHTML = ""
     }
+    execute(){
+        this.add();
+        this.print();
+    }
+
 }
 
 let crud = new Crud()
-crud.print()
+crud.execute()
