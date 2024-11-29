@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .box {
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .list h1 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        .list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inpu">
+            <input type="text" id="input-task" placeholder="Enter a task">
+            <button id="add-btn">Add Task</button>
+        </div>
+        <div class="list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
