@@ -18,7 +18,7 @@ class Crud{
 
             let client = {
                 name: input_name.value.trim(),
-                email: input_email.value.trim()
+                email: input_email.value.trim() 
             }
             if(client.name === '' || client.email === ''){
                 alert("Please enter a name and email.");
@@ -47,6 +47,19 @@ class Crud{
             </tr>
         `
     }
+    edit(client){
+        let edit_btn =document.querySelectorAll('.edit-btn');
+        console.log(edit_btn);
+        for(let i = 0; i < edit_btn.length; i++){
+            edit_btn[i].addEventListener('click',() =>{
+                console.log(edit_btn[i]);
+                
+            })
+        }
+        
+        console.log('edit client');
+        //... edit client data
+    }
     print(){
         // console.log('fafao daholo ny eo ambony');
         this.update()
@@ -61,6 +74,7 @@ class Crud{
     }
     execute(){
         this.add();
+        this.edit();
         this.print();
     }
 
